@@ -1,0 +1,20 @@
+{
+  "name": "istanbul-cluster-demo",
+  "version": "1.0.0",
+  "description": "istanbul cluster mode demo",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test":"npm run cov && npm run report",
+    "report":"node --harmony node_modules/.bin/istanbul report --root ./coverage text-summary json lcov",
+    "cov": "node --harmony node_modules/.bin/istanbul cover  --report none --print none --include-pid  ./node_modules/mocha/bin/_mocha -- 'test/**/*.test.js'"
+  },
+  "author": "308512341@qq.com",
+  "license": "ISC",
+  "dependencies": {
+    "istanbul": "~0.4.1",
+    "mocha": "~2.3.4"
+  }
+}
